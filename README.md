@@ -1,6 +1,6 @@
-# empty-project
+# Hive online
 
-Empty project.
+Online version of "Hive" game. https://en.wikipedia.org/wiki/Hive_(game)
 
 ## Building and running on localhost
 
@@ -13,19 +13,13 @@ npm install
 To create a production build:
 
 ```sh
-npm run build-prod
+npm run build
 ```
 
 To create a development build:
 
 ```sh
-npm run build-dev
-```
-
-## Running
-
-```sh
-node dist/bundle.js
+npm start
 ```
 
 ## Credits
