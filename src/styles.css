@@ -1,3 +1,10 @@
-body {
-  background: green;
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+#container {
+  background:linear-gradient(140deg, #3494E6, #EC6EAD);
+  height: 100%;
+  cursor: grab;
 }

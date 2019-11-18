@@ -2,14 +2,21 @@ import Konva from 'konva';
 
 import {
   CONTAINER_ID,
-  STAGE_WIDTH,
-  STAGE_HEIGHT,
 } from '../constants';
 
+const container = document.querySelector('#container');
 const stage = new Konva.Stage({
   container: CONTAINER_ID,
-  width: STAGE_WIDTH,
-  height: STAGE_HEIGHT,
+  width: container.offsetWidth,
+  height: container.offsetHeight,
 });
+
+function fitStageIntoParentContainer() {
+  stage.width(container.offsetWidth);
+  stage.height(container.offsetHeight);
+  stage.draw();
+}
+
+window.addEventListener('resize', fitStageIntoParentContainer);
 
 export default stage;
