@@ -4,18 +4,18 @@ import { STAGE_WIDTH, STAGE_HEIGHT } from '../constants';
 import stage from './stage';
 
 export default class Hexagon extends Konva.RegularPolygon {
-  constructor() {
+  constructor({ image }) {
     super({
       x: STAGE_WIDTH / 2,
       y: STAGE_HEIGHT / 2,
       sides: 6,
       radius: 70,
-      fill: 'red',
       stroke: 'black',
       strokeWidth: 4,
       draggable: true,
     });
     this.setCursorStyle();
+    this.setImage(image);
   }
 
   setCursorStyle() {
@@ -25,5 +25,14 @@ export default class Hexagon extends Konva.RegularPolygon {
     this.on('mouseleave', () => {
       stage.container().style.cursor = 'default';
     });
+  }
+
+  setImage(imageSrc) {
+    const image = new Image();
+
+    image.onload = () => {
+      this.fillPatternImage(image);
+    };
+    image.src = imageSrc;
   }
 }

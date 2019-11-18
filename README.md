@@ -24,4 +24,4 @@ npm start
 
 ## Credits
 
-Made with [createapp.dev](https://createapp.dev/)
+Icons made by [Freepik](https://www.flaticon.com/authors/freepik)
