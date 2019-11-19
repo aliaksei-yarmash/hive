@@ -23,7 +23,7 @@ npm start
 ```
 
 ## To bee done:
-- able to move the stage
+- replace images with font
 
 ## Credits
 

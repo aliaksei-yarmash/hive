@@ -10,7 +10,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.html$/i,
+        test: /\.html$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -22,6 +22,13 @@ const config = {
           'css-loader',
         ],
       },
+      {
+        test: /\.png$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]'
+        }
+      }
     ],
   },
   plugins: [

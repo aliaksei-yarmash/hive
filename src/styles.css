@@ -6,5 +6,4 @@ html, body {
 #container {
   background:linear-gradient(140deg, #3494E6, #EC6EAD);
   height: 100%;
-  cursor: grab;
 }

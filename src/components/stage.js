@@ -9,6 +9,7 @@ const stage = new Konva.Stage({
   container: CONTAINER_ID,
   width: container.offsetWidth,
   height: container.offsetHeight,
+  draggable: true
 });
 
 function fitStageIntoParentContainer() {
