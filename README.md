@@ -22,6 +22,9 @@ To create a development build:
 npm start
 ```
 
+## To bee done:
+- able to move the stage
+
 ## Credits
 
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik)
