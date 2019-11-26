@@ -1,15 +1,14 @@
 import Konva from 'konva';
 
-import { STAGE_WIDTH, STAGE_HEIGHT } from '../constants';
-
 export default class Hexagon extends Konva.RegularPolygon {
-  constructor() {
+  constructor({
+    color
+  }) {
     super({
-      x: STAGE_WIDTH / 2,
-      y: STAGE_HEIGHT / 2,
       sides: 6,
       radius: 70,
-      stroke: 'black',
+      stroke: color === 'dark' ? 'white' : 'black',
+      // fill: color === 'dark' ? 'black' : 'white',
       strokeWidth: 6,
     });
   }

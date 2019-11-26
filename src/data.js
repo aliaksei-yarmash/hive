@@ -7,27 +7,46 @@ import antImageSrc from './images/insects/ant.png';
 export const insects = [
   {
     name: 'bee',
-    quantity: 1,
     imageSrc: beeImageSrc
   },
   {
     name: 'spider',
-    quantity: 2,
+    imageSrc: spiderImageSrc
+  },
+  {
+    name: 'spider',
     imageSrc: spiderImageSrc
   },
   {
     name: 'beetle',
-    quantity: 2,
+    imageSrc: cricketImageSrc
+  },
+  {
+    name: 'beetle',
     imageSrc: cricketImageSrc
   },
   {
     name: 'grasshoper',
-    quantity: 3,
+    imageSrc: grasshoperImageSrc
+  },
+  {
+    name: 'grasshoper',
+    imageSrc: grasshoperImageSrc
+  },
+  {
+    name: 'grasshoper',
     imageSrc: grasshoperImageSrc
   },
   {
     name: 'ant',
-    quantity: 3,
+    imageSrc: antImageSrc
+  },
+  {
+    name: 'ant',
+    imageSrc: antImageSrc
+  },
+  {
+    name: 'ant',
     imageSrc: antImageSrc
   }
 ];
