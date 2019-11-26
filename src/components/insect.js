@@ -9,6 +9,7 @@ export default class Insect extends Konva.Group {
     super();
     this.add(new Hexagon());
     new InsectImage({ imageSrc, group: this }); // eslint-disable-line
+    this.draggable(true);
     this.setCursorStyle();
   }
 

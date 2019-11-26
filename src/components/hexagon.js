@@ -8,7 +8,7 @@ export default class Hexagon extends Konva.RegularPolygon {
       x: STAGE_WIDTH / 2,
       y: STAGE_HEIGHT / 2,
       sides: 6,
-      radius: 300,
+      radius: 70,
       stroke: 'black',
       strokeWidth: 6,
     });
