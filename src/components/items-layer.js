@@ -1,10 +1,9 @@
 import Konva from 'konva';
 
-import Hexagon from './hexagon';
-import antImage from '../images/insects/ant.png'
+import Insect from './insect';
+import antImageSrc from '../images/insects/ant.png';
 
 const layer = new Konva.Layer();
-layer.add(new Hexagon({ image: antImage }));
-layer.add(new Hexagon({ image: antImage }));
+layer.add(new Insect({ imageSrc: antImageSrc }));
 
 export default layer;
