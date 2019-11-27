@@ -10,7 +10,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.html$/,
+        test: /\.(html|ico)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
@@ -34,6 +34,7 @@ const config = {
   plugins: [
     new CopyPlugin([
       { from: 'src/styles.css' },
+      { from: 'src/favicon.ico' }
     ]),
   ],
   devServer: {
