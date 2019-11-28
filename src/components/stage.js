@@ -3,6 +3,7 @@ import Konva from 'konva';
 import {
   CONTAINER_ID,
 } from '../constants';
+import moveBackgroundOnDrag from './drag-background';
 
 const container = document.querySelector('#container');
 const stage = new Konva.Stage({
@@ -19,5 +20,6 @@ function fitStageIntoParentContainer() {
 }
 
 window.addEventListener('resize', fitStageIntoParentContainer);
+moveBackgroundOnDrag();
 
 export default stage;

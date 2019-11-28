@@ -8,8 +8,8 @@ export default class Hexagon extends Konva.RegularPolygon {
       sides: 6,
       radius: 70,
       stroke: color === 'dark' ? 'white' : 'black',
-      fill: color === 'dark' ? 'black' : 'white',
-      strokeWidth: 6,
+      fill: color === 'dark' ? '#6a73aa' : '#addbd9',
+      strokeWidth: 4,
     });
   }
 }

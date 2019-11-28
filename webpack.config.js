@@ -23,7 +23,7 @@ const config = {
         ],
       },
       {
-        test: /\.png$/,
+        test: /\.(jpg|png)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]'

@@ -4,6 +4,6 @@ html, body {
 }
 
 #container {
-  background:linear-gradient(140deg, #3494E6, #EC6EAD);
+  background: url('./background.jpg');
   height: 100%;
 }
