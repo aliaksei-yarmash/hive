@@ -4,25 +4,26 @@ Online version of "Hive" game. https://en.wikipedia.org/wiki/Hive_(game)
 
 ## Building and running on localhost
 
-First install dependencies (from `/hives-fe`):
+First install dependencies:
 
 ```sh
 npm install
 ```
 
-To create a production build (from `/hives-fe`):
+To create a production build:
 
 ```sh
 npm run build
 ```
 
-To start a development instance (from `/hives-fe`):
+To create a development build:
 
 ```sh
 npm start
 ```
 
 ## To bee done:
+- replace images with font
 
 ## Credits
 
