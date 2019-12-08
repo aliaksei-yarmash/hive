@@ -7,7 +7,7 @@ services:
       - "80:80"
     volumes:
       - /certs:/certs
+  welcome:
+    build: ./welcome
   hive-node:
     build: ./hive-node
-    ports:
-      - "3000:3000"
