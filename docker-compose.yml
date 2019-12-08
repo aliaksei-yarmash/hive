@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   nginx:
     build: ./nginx
@@ -7,3 +7,7 @@ services:
       - "80:80"
     volumes:
       - /certs:/certs
+  hive-node:
+    build: ./hive-node
+    ports:
+      - "3000:3000"
