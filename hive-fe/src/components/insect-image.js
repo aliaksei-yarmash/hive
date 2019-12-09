@@ -14,8 +14,8 @@ export default class InsectImage {
   onImageLoad(image) {
     image.cache();
     image.filters(this.color === 'dark' ? [Konva.Filters.Invert] : []);
-    image.scale({ x: 0.2, y: 0.2 });
-    image.position({ x: -50, y: -50 });
+    image.scale({ x: 0.12, y: 0.12 });
+    image.position({ x: -30, y: -32 });
     this.group.add(image);
     this.group.draw();
   }

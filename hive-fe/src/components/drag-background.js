@@ -4,22 +4,20 @@ let startCursorPositionY;
 let startBackgroundPositionX;
 let startBackgroundPositionY;
 
-export default function moveBackgroundOnDrag () {
-  background.addEventListener('mousedown', e => {
-    startCursorPositionX = e.clientX;
-    startCursorPositionY = e.clientY;
-    startBackgroundPositionX = pixelsToNumber(background.style.backgroundPositionX);
-    startBackgroundPositionY = pixelsToNumber(background.style.backgroundPositionY);
-    document.addEventListener('mousemove', moveListener);
-  });
-  
-  background.addEventListener('mouseup', () => {
-    document.removeEventListener('mousemove', moveListener);
-    startCursorPositionX = null;
-    startCursorPositionY = null;
-    startBackgroundPositionX = null;
-    startBackgroundPositionY = null;
-  });
+export const startDragListener = e => {
+  startCursorPositionX = e.clientX;
+  startCursorPositionY = e.clientY;
+  startBackgroundPositionX = pixelsToNumber(background.style.backgroundPositionX);
+  startBackgroundPositionY = pixelsToNumber(background.style.backgroundPositionY);
+  document.addEventListener('mousemove', moveListener);
+};
+
+export const removeDragListener = () => {
+  document.removeEventListener('mousemove', moveListener);
+  startCursorPositionX = null;
+  startCursorPositionY = null;
+  startBackgroundPositionX = null;
+  startBackgroundPositionY = null;
 }
 
 const moveListener = e => {

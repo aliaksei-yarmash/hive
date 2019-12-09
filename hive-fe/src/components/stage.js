@@ -3,7 +3,7 @@ import Konva from 'konva';
 import {
   CONTAINER_ID,
 } from '../constants';
-import moveBackgroundOnDrag from './drag-background';
+import { startDragListener, removeDragListener } from './drag-background';
 
 const container = document.querySelector('#container');
 const stage = new Konva.Stage({
@@ -13,6 +13,14 @@ const stage = new Konva.Stage({
   draggable: true
 });
 
+window.stage = stage;
+stage.on('dragstart', ({ target, evt }) => {
+  target === stage && startDragListener(evt)
+})
+stage.on('dragend', ({ target, evt }) => {
+  target === stage && removeDragListener(evt)
+})
+
 function fitStageIntoParentContainer() {
   stage.width(container.offsetWidth);
   stage.height(container.offsetHeight);
@@ -20,6 +28,5 @@ function fitStageIntoParentContainer() {
 }
 
 window.addEventListener('resize', fitStageIntoParentContainer);
-moveBackgroundOnDrag();
 
 export default stage;

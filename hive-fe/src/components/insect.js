@@ -12,6 +12,7 @@ export default class Insect extends Konva.Group {
     this.draggable(true);
     this.position(position);
     this.setCursorStyle();
+    this.addClickListener();
   }
 
   setCursorStyle() {
@@ -22,5 +23,9 @@ export default class Insect extends Konva.Group {
     this.on('mouseleave', () => {
       stage.container().style.cursor = null;
     });
+  }
+
+  addClickListener() {
+    this.on('dragstart', () => this.moveToTop());
   }
 }
