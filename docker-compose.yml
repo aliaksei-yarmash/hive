@@ -10,4 +10,6 @@ services:
   welcome:
     build: ./welcome
   hive-node:
-    build: ./hive-node
+    build:
+      context: ./
+      dockerfile: hive-node/Dockerfile

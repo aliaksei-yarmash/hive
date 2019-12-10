@@ -8,7 +8,7 @@ export default class InsectImage {
   }) {
     this.group = group;
     this.color = color;
-    Konva.Image.fromURL(imageSrc, this.onImageLoad.bind(this));
+    Konva.Image.fromURL(`/hive/${imageSrc}`, this.onImageLoad.bind(this));
   }
 
   onImageLoad(image) {

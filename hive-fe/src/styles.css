@@ -4,6 +4,7 @@ html, body {
 }
 
 #container {
-  background: url('./background.jpg');
+  background-color: #7e4d11;
+  background-image: url('./background.jpg');
   height: 100%;
 }
