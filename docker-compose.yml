@@ -13,3 +13,17 @@ services:
     build:
       context: ./
       dockerfile: hive-node/Dockerfile
+  mongodb:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=ubuntu-db
+      - MONGO_INITDB_ROOT_USERNAME=ubuntu
+      - MONGO_INITDB_ROOT_PASSWORD=ubuntu
+    volumes:
+      - ./mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+      - /home/ubuntu/data:/data/db
+    ports:
+      - "27017-27019:27017-27019"
+      # docker exec -it <container_id> bash
+      # mongo -u <user> -p <password>
+      # mongodb://YourUsername:YourPasswordHere@127.0.0.1:27017/your-database-name
