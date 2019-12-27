@@ -1,5 +1,4 @@
 const Router = require('koa-router');
-const bodyParser = require('koa-bodyparser');
 const User = require('../models/user')
 
 const router = new Router();
@@ -10,7 +9,7 @@ const authError = () => {
   throw error;
 }
 
-router.post('/login', bodyParser(), async ctx => {
+router.post('/login', async ctx => {
   const { username, password } = ctx.request.body;
   const user = await User.get(username);
 

@@ -25,4 +25,9 @@ describe('Auth module', () => {
     });
     expect(res.status).toEqual(403)
   });
+
+  it.todo('User should get session cookie after auth');
+  it.todo('user can gain access using session cookie');
+  it.todo(`User can't user session cookie after logout`);
+  it.todo('User get 404 on invalid session cookie');
 });
