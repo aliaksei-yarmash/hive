@@ -26,8 +26,15 @@ describe('Auth module', () => {
     expect(res.status).toEqual(401)
   });
 
-  it.todo('User should get session cookie after auth');
+  it('User should get session cookie after auth', async () => {
+    const res = await request(app).post('/auth/login').send({
+      username: 'user',
+      password: 'password'
+    });
+    expect(Array.isArray(res.headers['set-cookie'])).toBe(true)
+  });
+
   it.todo('user can gain access using session cookie');
-  it.todo(`User can't user session cookie after logout`);
   it.todo('User get 404 on invalid session cookie');
+  it.todo(`User can't use session cookie after logout`);
 });

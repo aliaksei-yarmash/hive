@@ -5,12 +5,14 @@ const session = require('koa-session');
 const passport = require('koa-passport');
 
 const frontpage = require('./services/frontpage')
+const checkAuthentication = require('./middlewares/checkAuthentication')
 
 const app = new Koa();
 app.keys = ['secret'];
 
 const router = new Router();
-router.get('/', frontpage);
+router.get('/notSecured', frontpage);
+router.get('/secured', checkAuthentication, frontpage);
 
 router.post('/auth/login', function(ctx) {
   return passport.authenticate('local', (err, user, info, status) => {
@@ -30,4 +32,5 @@ require('./services/passport');
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(router.routes());
-module.exports = app.listen();
+
+module.exports = app.listen(3000);
