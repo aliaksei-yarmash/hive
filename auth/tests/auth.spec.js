@@ -15,7 +15,7 @@ describe('Auth module', () => {
       username: 'unregistered_user',
       password: 'password'
     });
-    expect(res.status).toEqual(403)
+    expect(res.status).toEqual(401)
   });
 
   it(`User can't login with invalid password`, async () => {
@@ -23,7 +23,7 @@ describe('Auth module', () => {
       username: 'user',
       password: 'invalid_password'
     });
-    expect(res.status).toEqual(403)
+    expect(res.status).toEqual(401)
   });
 
   it.todo('User should get session cookie after auth');
