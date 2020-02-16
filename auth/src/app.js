@@ -26,6 +26,11 @@ router.post('/auth/login', function(ctx) {
   })(ctx)
 })
 
+router.get('/auth/logout', function(ctx) {
+  ctx.logout()
+  ctx.body = { success: true }
+})
+
 app.use(bodyParser());
 app.use(session({}, app));
 require('./services/passport');

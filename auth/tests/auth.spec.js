@@ -35,6 +35,6 @@ describe('Auth module', () => {
   });
 
   it.todo('user can gain access using session cookie');
-  it.todo('User get 404 on invalid session cookie');
+  it.todo('User get 401 on invalid session cookie');
   it.todo(`User can't use session cookie after logout`);
 });
