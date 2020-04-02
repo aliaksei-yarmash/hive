@@ -14,9 +14,13 @@ app.use(async ctx => {
   const collection = db.collection(COLLECTION_NAME);
 
   await collection.insertOne({ ip: clientIp, date: new Date() });
-  const allVisitors = await collection.find({}, { sort: [[ 'date', -1 ]] }).toArray();
+  const visitorsCount = await collection.count();
+  const lastVisitors = await collection.find({}, { sort: [[ 'date', -1 ]], limit: 100 }).toArray();
   client.close();
-  ctx.body = allVisitors;
+  ctx.body = {
+    visitorsCount,
+    lastVisitors
+  };
 });
 
 app.listen(3000);
