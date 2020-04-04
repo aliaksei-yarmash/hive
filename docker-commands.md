@@ -12,6 +12,7 @@ docker container rm -f $(docker container ls -aq)
 
 ### Fetch and rebuild:
 git fetch && git reset --hard origin/HEAD && docker-compose up -d --build
+--force-recreate
 
 ### Run only one container:
 docker build --tag <image-name> .

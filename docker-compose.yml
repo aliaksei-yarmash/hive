@@ -15,6 +15,15 @@ services:
     build:
       context: ./
       dockerfile: hive-node/Dockerfile
+  jenkins:
+    build: ./jenkins
+    environment:
+      - JENKINS_OPTS="--prefix=/jenkins"
+    ports:
+      - "50000:50000"
+      - "8080:8080"
+    volumes:
+      - /home/ubuntu/jenkins/jenkins_home:/var/jenkins_home
   mongodb:
     image: mongo
     environment:
