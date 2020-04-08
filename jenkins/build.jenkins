@@ -1,0 +1,18 @@
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage("Docker compose") {
+            steps {
+                sh 'ssh ubuntu@yarmosh.by \'cd hive && git fetch && git reset --hard origin/HEAD && docker-compose up -d --build\''
+            }
+        }
+    }
+}

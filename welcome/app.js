@@ -15,7 +15,7 @@ app.use(async ctx => {
 
   await collection.insertOne({ ip: clientIp, date: new Date() });
   const visitorsCount = await collection.count();
-  const lastVisitors = await collection.find({}, { sort: [[ 'date', -1 ]], limit: 100 }).toArray();
+  const lastVisitors = await collection.find({}, { sort: [[ 'date', -1 ]], limit: 20 }).toArray();
   client.close();
   ctx.body = {
     visitorsCount,
