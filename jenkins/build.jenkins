@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage("Docker compose") {
             steps {
-                sh 'ssh ubuntu@yarmosh.by \'cd hive && git fetch && git reset --hard origin/HEAD && docker-compose up -d --build\''
+                sh 'ssh ubuntu@yarmosh.by \'cd /hive/hive && git fetch && git reset --hard origin/HEAD && docker-compose up -d --build\''
             }
         }
     }

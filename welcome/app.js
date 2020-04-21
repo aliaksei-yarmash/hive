@@ -18,8 +18,8 @@ app.use(async ctx => {
   const lastVisitors = await collection.find({}, { sort: [[ 'date', -1 ]], limit: 20 }).toArray();
   client.close();
   ctx.body = {
-    visitorsCount,
-    lastVisitors
+    total: visitorsCount,
+    lastTwenty: lastVisitors
   };
 });
 
