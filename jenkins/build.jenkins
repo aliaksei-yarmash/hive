@@ -15,4 +15,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            telegramSend 'Build ${BUILD_DISPLAY_NAME}: ' + currentBuild.currentResult + '\n' + 'Duration: ' + currentBuild.durationString + '\n' + '${BUILD_URL}console'
+        }
+    }
 }
