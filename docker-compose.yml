@@ -9,8 +9,8 @@ services:
       - /certs:/certs
   welcome:
     build: ./welcome
-  auth:
-    build: ./auth
+  # auth:
+  #   build: ./auth
   hive-node:
     build:
       context: ./
