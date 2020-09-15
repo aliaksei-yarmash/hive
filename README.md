@@ -1,4 +1,4 @@
-# Ubuntu server monorepo
+# Ubuntu server monorepository
 
 ### Start:
 docker-compose up -d
