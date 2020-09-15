@@ -23,7 +23,7 @@ services:
       - "50000:50000"
       - "8080:8080"
     volumes:
-      - /home/ubuntu/jenkins/jenkins_home:/var/jenkins_home
+      - /hive/jenkins/jenkins_home:/var/jenkins_home
   mongodb:
     image: mongo
     environment:
@@ -32,7 +32,7 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=ubuntu
     volumes:
       - ./mongodb/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
-      - /home/ubuntu/data:/data/db
+      - /hive/data:/data/db
     ports:
       - "27017-27019:27017-27019"
       # docker exec -it <container_id> bash
